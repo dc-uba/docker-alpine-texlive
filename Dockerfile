@@ -24,5 +24,3 @@ ENV PATH="/usr/local/texlive/2016/bin/x86_64-linux:${PATH}"
 WORKDIR /workdir
 
 VOLUME ["/workdir"]
-
-ENTRYPOINT ["/bin/sh"]

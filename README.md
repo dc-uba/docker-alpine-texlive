@@ -17,6 +17,7 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 ```
 Log out and log back in so that your group membership is re-evaluated.
+
 3. Download the image:
 ```
 docker pull ivanpondal/alpine-latex
