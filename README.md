@@ -39,6 +39,11 @@ docker run --rm -v $PWD:/workdir:z ivanpondal/alpine-latex pdflatex <TEX_FILE>
 
 ## Adding new packages
 
+### Sample project
+
+To see an example of how this image can be used and extended you can visit
+[docker-alpine-texlive-sample](https://github.com/ivanpondal/docker-alpine-texlive-sample).
+
 ### Extending the image
 
 If you wish to add your own selection of packages to this image you may extend
