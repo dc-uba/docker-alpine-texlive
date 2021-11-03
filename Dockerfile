@@ -12,17 +12,17 @@ RUN apk --no-cache add perl wget \
 	wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
 	tar --strip-components=1 -xvf install-tl-unx.tar.gz && \
 	./install-tl --profile=texlive.profile && \
-	tlmgr install collection-latex collection-latexextra collection-langspanish && \
 	apk del perl wget xz tar && \
 	cd && rm -rf /tmp/install-tl-unx
 
 # Install additional packages
 RUN apk --no-cache add perl wget && \
-	tlmgr install bytefield algorithms algorithm2e ec fontawesome && \
+	tlmgr install collection-latex collection-latexextra collection-langspanish \
+	bytefield algorithms algorithm2e ec fontawesome && \
 	apk del perl wget && \
 	mkdir /workdir
 
-ENV PATH="/usr/local/texlive/2016/bin/x86_64-linux:${PATH}"
+ENV PATH="/usr/local/texlive/bin/x86_64-linux:${PATH}"
 
 WORKDIR /workdir
 
