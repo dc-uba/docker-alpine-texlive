@@ -6,7 +6,7 @@ WORKDIR /tmp/install-tl-unx
 
 COPY texlive.profile .
 
-# Install TeX Live 2016 with some basic collections
+# Install TeX Live
 RUN apk --no-cache add perl wget \
 	xz tar && \
 	wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
@@ -15,7 +15,7 @@ RUN apk --no-cache add perl wget \
 	apk del perl wget xz tar && \
 	cd && rm -rf /tmp/install-tl-unx
 
-# Install additional packages
+# Install basic collection and additional packages
 RUN apk --no-cache add perl wget && \
 	tlmgr install collection-latex collection-latexextra collection-langspanish \
 	bytefield algorithms algorithm2e ec fontawesome && \
