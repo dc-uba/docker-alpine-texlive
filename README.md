@@ -1,8 +1,6 @@
 ![](docker_latex_banner.png)
 
 # docker-alpine-texlive
-[![](https://images.microbadger.com/badges/version/ivanpondal/alpine-latex.svg)](https://microbadger.com/images/ivanpondal/alpine-latex "Get your own version badge on microbadger.com")
-[![](https://images.microbadger.com/badges/image/ivanpondal/alpine-latex.svg)](https://microbadger.com/images/ivanpondal/alpine-latex "Get your own image badge on microbadger.com")
 
 > Minimal TeX Live installation Docker image
 
@@ -50,9 +48,9 @@ If you wish to add your own selection of packages to this image you may extend
 it by writing a new `Dockerfile` as follows:
 
 ```
-FROM ivanpondal/alpine-latex:1.1.0
+FROM ivanpondal/alpine-latex:2.0.1
 
-RUN apk --no-cache add perl=5.24.0-r0 wget=1.18-r2 && \
+RUN apk --no-cache add perl wget && \
 	tlmgr install <NEW_PACKAGES> && \
 	apk del perl wget
 ```
@@ -74,7 +72,7 @@ packages `RUN` instruction:
 
 ```
 # Install additional packages
-RUN apk --no-cache add perl=5.24.0-r0 wget=1.18-r2 && \
+RUN apk --no-cache add perl wget && \
 	tlmgr install <NEW_PACKAGES> bytefield algorithms algorithm2e ec fontawesome && \
 	apk del perl wget && \
 	mkdir /workdir
