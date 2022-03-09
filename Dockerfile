@@ -17,7 +17,7 @@ RUN apk --no-cache add perl wget \
 
 # Install basic collection and additional packages
 RUN apk --no-cache add perl wget && \
-	tlmgr install collection-latex collection-latexextra collection-langspanish \
+	tlmgr install collection-latex collection-latexextra collection-fontsrecommended collection-langspanish \
 	bytefield algorithms algorithm2e ec fontawesome && \
 	apk del perl wget && \
 	mkdir /workdir
