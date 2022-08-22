@@ -4,13 +4,12 @@ RUN mkdir /tmp/install-tl-unx
 
 WORKDIR /tmp/install-tl-unx
 
+COPY install-tl-unx-20220822.tar.gz .
 COPY texlive.profile .
 
 # Install TeX Live
-RUN apk --no-cache add perl wget \
-	xz tar && \
-	wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz && \
-	tar --strip-components=1 -xvf install-tl-unx.tar.gz && \
+RUN apk --no-cache add perl wget xz tar && \
+	tar --strip-components=1 -xvf install-tl-unx-20220822.tar.gz && \
 	./install-tl --profile=texlive.profile && \
 	apk del perl wget xz tar && \
 	cd && rm -rf /tmp/install-tl-unx
