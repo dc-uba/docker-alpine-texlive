@@ -62,7 +62,7 @@ them to the final layer.
 Build the image:
 
 ```
-docker build . -t <NEW_IMAGE_NAME>
+docker buildx build --platform <PLATFORM> -t <NEW_IMAGE_NAME> -f <PLATFORM_DOCKERFILE> --load .
 ```
 
 ### Modifying the image
