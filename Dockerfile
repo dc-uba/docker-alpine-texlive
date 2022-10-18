@@ -2,9 +2,13 @@ FROM alpine:3.16 as base
 
 ARG TARGETARCH
 
+# Hack to set env variables based on TARGETARCH
+
+# amd64
 FROM base as base-amd64
 ARG GLIBC_ARCH=x86_64
 
+# arm64
 FROM base as base-arm64
 ARG GLIBC_ARCH=aarch64
 
@@ -39,6 +43,8 @@ RUN apk add --no-cache --purge -uU curl \
     && echo 'hosts: files mdns4_minimal [NOTFOUND=return] dns mdns4' >> /etc/nsswitch.conf \
     && apk del --purge curl glibc-i18n \
     && rm -rf /var/cache/apk/* /tmp/* /glibc /etc/apk/keys/cyphernode@satoshiportal.com.rsa.pub
+
+# Install TexLive
 RUN mkdir /tmp/install-tl-unx
 
 WORKDIR /tmp/install-tl-unx
