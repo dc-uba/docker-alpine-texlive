@@ -65,7 +65,7 @@ them to the final layer.
 Build the image:
 
 ```
-docker buildx build --platform <PLATFORM> -t <NEW_IMAGE_NAME> -f <PLATFORM_DOCKERFILE> --load .
+docker buildx build --platform linux/arm64,linux/amd64 -t <IMAGE_NAME> --progress=plain .
 ```
 
 ### Modifying the image
