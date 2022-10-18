@@ -51,7 +51,7 @@ If you wish to add your own selection of packages to this image you may extend
 it by writing a new `Dockerfile` as follows:
 
 ```
-FROM ivanpondal/alpine-latex:2.0.1
+FROM ivanpondal/alpine-latex:2.2.0
 
 RUN apk --no-cache add perl wget && \
 	tlmgr install <NEW_PACKAGES> && \
