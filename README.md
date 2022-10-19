@@ -7,7 +7,9 @@
 The purpose of this image is to have a TeX Live installation with the bare
 minimum needed to produce Computer Science reports.
 
-Depends on [SatoshiPortal's](https://github.com/SatoshiPortal/alpine-pkg-glibc)
+## Credits
+
+This project works thanks to [SatoshiPortal's](https://github.com/SatoshiPortal/alpine-pkg-glibc)
 glibc apk builds for alpine linux. Thanks Satoshi!
 
 ## Setup
